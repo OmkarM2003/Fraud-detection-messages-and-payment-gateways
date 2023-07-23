@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Two Buttons</title>
+	<style>
+body {
+  background-color: #222;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-top: 3rem;
+}
+
+.text-box {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+  text-align: center; /* add text-align center */
+}
+
+.btn {
+  margin-top: 2rem;
+}
+
+.btn:first-child {
+  margin-right: 2rem;
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative; /* change position to relative */
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: skyblue;
+    color: #777;
+}
+.btn {
+    background-color: skyblue;
+    color: #fff;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.container {
+  display: flex;
+  flex-direction: row; /* change the flex direction to row */
+  justify-content: center;
+  align-items: center;
+}
+
+	</style>
+</head>
+<body>
+	<h1>Choose a Method:</h1>
+<div class="text-box">
+  <a href="/payment" class="btn btn-white btn-animate">Payment</a>
+  <a href="/message" class="btn btn-white btn-animate">Message</a>
+</div>
+
+
+
+</body>
+</html>
